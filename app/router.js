@@ -23,4 +23,6 @@ module.exports = app => {
 
   // socket.io
   io.of('/').route('message', io.controller.nsp.message);
+
+  router.resources('topics', '/api/v2/topics', app.controller.topics);
 };

@@ -7,7 +7,7 @@ class IndexService extends Service {
     // const sql = 'select * from test';
     // return await app.mysql.query(sql);
     const user = await this.app.mysql.get('user_info', { id: 0 });
-    return { user };
+    return user;
   }
 
   async create(data) {

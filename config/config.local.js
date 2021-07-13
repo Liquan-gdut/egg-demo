@@ -11,7 +11,8 @@ exports.mysql = {
     // 用户名
     user: 'root',
     // 密码
-    password: 'Aa668589..',
+    password: '123456789',
+    // password: 'Aa668589..',
     // 数据库名
     database: 'egg_demo',
     dateStrings: true,

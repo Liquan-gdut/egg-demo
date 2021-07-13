@@ -34,3 +34,8 @@ exports.email = {
   package: 'egg-email',
 };
 
+// 校验插件
+exports.validate = {
+  enable: true,
+  package: 'egg-validate',
+};
