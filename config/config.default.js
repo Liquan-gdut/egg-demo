@@ -75,7 +75,7 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
   const multipart = {
-    fileExtensions: ['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.csv', '.rar', '.zip', '.xlsx', '.xls'],
+    fileExtensions: [ '.pdf', '.doc', '.docx', '.ppt', '.pptx', '.csv', '.rar', '.zip', '.xlsx', '.xls' ],
     // 增加对 json 扩展名的文件支持
     fileSize: '200mb',
     fieldSize: '200mb',
@@ -86,7 +86,34 @@ module.exports = appInfo => {
     multipart,
     static: {
       prefix: '/',
-      dir: ['app/public']
+      dir: [ 'app/public' ],
+    },
+    onerror: {
+      all(err, ctx) {
+        // 在此处定义针对所有响应类型的错误处理方法
+        // 注意，定义了 config.all 之后，其他错误处理方法不会再生效
+        console.log('ctx');
+        ctx.body = JSON.stringify({
+          code: 500,
+          message: '服务器错误',
+        });
+        // ctx.body = '服务器错误------';
+        // ctx.body = {
+        //   code: 500,
+        //   message: '服务器错误------',
+        // };
+        ctx.status = 500;
+      },
+      html(err, ctx) {
+        // html hander
+        ctx.body = '<h3>error</h3>';
+        ctx.status = 500;
+      },
+      json(err, ctx) {
+        // json hander
+        ctx.body = { message: 'error' };
+        ctx.status = 500;
+      },
     },
   };
 };
