@@ -19,6 +19,7 @@
     "egg-validate": "^2.0.2",
     "egg-view-nunjucks": "^2.2.0",
     "koa-is-json": "^1.0.0",
+    "object-assign": "^4.1.1",
     "stream-wormhole": "^1.1.0",
     "ws": "^6.0.0",
     "zlib": "^1.0.5"
